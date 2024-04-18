@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:24:57 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 18:58:09 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/04/19 01:06:54 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+
+
 
 // #include <stdio.h>
 
