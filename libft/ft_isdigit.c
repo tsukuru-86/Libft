@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:23:34 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:20 by tkomai           ###   ########.fr       */
+/*   Created: 2024/04/18 14:39:04 by tkomai            #+#    #+#             */
+/*   Updated: 2024/04/18 14:57:58 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (c >= '0' && c <= '9')
 	{
 		return (1);
 	}
@@ -20,12 +20,16 @@ int	ft_isalpha(int c)
 }
 
 // #include <stdio.h>
+// #include <ctype.h>
 
 // int main(void)
 // {
-// 	if (ft_isalpha('1')){
-// 		printf("Good\n");
-// 	}else{
-// 		printf("Bad\n");
+// 	if(ft_isdigit('a'))
+// 	{
+// 		printf("Perfect\n");
+// 	}
+// 	if(isdigit('a'))
+// 	{
+// 		printf("Perfect\n");
 // 	}
 // }

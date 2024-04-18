@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:23:34 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:20 by tkomai           ###   ########.fr       */
+/*   Created: 2024/04/18 16:43:51 by tkomai            #+#    #+#             */
+/*   Updated: 2024/04/18 18:02:28 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isascii(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}
@@ -20,12 +20,16 @@ int	ft_isalpha(int c)
 }
 
 // #include <stdio.h>
+// #include <ctype.h>
 
 // int main(void)
 // {
-// 	if (ft_isalpha('1')){
-// 		printf("Good\n");
-// 	}else{
-// 		printf("Bad\n");
+// 	if(ft_isascii('\''))
+// 	{
+// 		printf("Perfect\n");
+// 	}
+// 	if(isascii('\''))
+// 	{
+// 		printf("Perfect\n");
 // 	}
 // }

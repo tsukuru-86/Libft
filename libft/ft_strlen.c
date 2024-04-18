@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:23:34 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:20 by tkomai           ###   ########.fr       */
+/*   Created: 2024/04/18 18:04:14 by tkomai            #+#    #+#             */
+/*   Updated: 2024/04/18 18:20:36 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <string.h>
+
+size_t	ft_strlen(const char *s)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	size_t	length;
+
+	length = 0;
+	while (*s)
 	{
-		return (1);
+		s++;
+		length++;
 	}
-	return (0);
+	return (length);
 }
 
-// #include <stdio.h>
+// #include<stdio.h>
 
 // int main(void)
 // {
-// 	if (ft_isalpha('1')){
-// 		printf("Good\n");
-// 	}else{
-// 		printf("Bad\n");
-// 	}
+// 	const char *a = "ssssddddddddd";
+// 	printf("%zu\n", ft_strlen(a));
 // }

@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 16:23:34 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:20 by tkomai           ###   ########.fr       */
+/*   Created: 2024/04/18 18:24:57 by tkomai            #+#    #+#             */
+/*   Updated: 2024/04/18 18:58:09 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <string.h>
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	unsigned char	*p;
+	int				i;
+
+	p = b;
+	i = 0;
+	while (i < len)
 	{
-		return (1);
+		p[i] = (unsigned char)c;
+		i++;
 	}
-	return (0);
+	return (b);
 }
 
 // #include <stdio.h>
 
-// int main(void)
-// {
-// 	if (ft_isalpha('1')){
-// 		printf("Good\n");
-// 	}else{
-// 		printf("Bad\n");
-// 	}
+// int main() {
+//     int array[10];
+//     // memset(array, 0, sizeof(array));
+// 	ft_memset(array, 0, sizeof(array));
+
+//     for (int i = 0; i < 10; i++) {
+//         printf("%d ", array[i]);
+//     }
+//     printf("\n");
+
+//     return (0);
 // }
