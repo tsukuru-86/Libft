@@ -1,38 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   Test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:56:22 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/23 15:02:42 by tkomai           ###   ########.fr       */
+/*   Created: 2024/04/18 15:09:20 by tkomai            #+#    #+#             */
+/*   Updated: 2024/04/18 15:10:06 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
-{
-	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'q') || (c >= 'A'
-			&& c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-// #include <stdio.h>
-// #include <ctype.h>
-
-// int main(void)
-// {
-// 	if(ft_isalnum('1'))
-// 	{
-// 		printf("Perfect\n");
-// 	}
-// 	if(isalnum('1'))
-// 	{
-// 		printf("Perfect\n");
-// 	}
-// }
-
-
+int ft_isalpha(int c);
+int ft_isdigit(int c);

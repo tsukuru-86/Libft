@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:24:57 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/19 01:06:54 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/04/23 14:22:37 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*p;
-	int				i;
+	size_t	i;
 
 	p = b;
 	i = 0;
