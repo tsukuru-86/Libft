@@ -6,15 +6,11 @@
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 10:44:50 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/08 11:27:02 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/10 19:53:54 by tsukuru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-
+#include "libft.h"
 
 char *ft_strdup(const char *s1)
 {
@@ -32,9 +28,6 @@ char *ft_strdup(const char *s1)
     *temp = '\0';
     return space;
 }
-
-
-// #include <stdio.h>
 
 // int main(void)
 // {
