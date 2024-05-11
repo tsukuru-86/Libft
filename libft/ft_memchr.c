@@ -6,11 +6,11 @@
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:48:32 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/01 17:51:20 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/11 13:48:42 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
