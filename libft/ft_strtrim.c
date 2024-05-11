@@ -6,22 +6,69 @@
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:05:19 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/10 19:18:54 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/11 11:12:38 by tsukuru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+
+//うまく実行出来ず、、
+
+
+#include "libft.h"
+
+static int is_set(const char c, const char *set)
+{
+    while (*set)
+    {
+        if (c == *set)
+            return 1;
+        set++;
+    }
+    return 0;
+}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
+    char *trimmed_str;
     size_t start;
     size_t end;
     size_t len;
 
-    start = 0;
-    while (s1[start] && s1[start] != *set)
-    start++;
+    if (!s1 || !set)
+        return NULL;
 
+    //find the trimming start point
+    start = 0;
+    while (s1[start] && is_set(s1[start], set))
+        start++;
+
+    //find the trimming end point
     end = ft_strlen(s1);
-    while ()
+    while (end > start && is_set(s1[end - 1], set))        
+        end--;
+
+    len = end - start;
+    
+    trimmed_str = (char *)malloc(sizeof(char) * (len + 1));
+
+    if (!trimmed_str)
+        return NULL;
+
+    ft_strlcpy(trimmed_str, s1 + start, len + 1);
+    
+    return trimmed_str;
 }
+
+// int main(void)
+// {
+//     char *a = "1234432123東京ララララララ122222321";
+//     char *set = "1234";
+
+//     char *trim = ft_strtrim(a, set);
+//     if (trim == NULL) {
+//         printf("Memory allocation failed or other error.\n");
+//     } else {
+//         printf("Trimmed string: '%s'\n", trim);
+//         free(trim);
+//     }
+// }

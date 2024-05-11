@@ -6,7 +6,7 @@
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 19:26:51 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/10 19:48:26 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/11 10:11:41 by tsukuru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char *ft_strdup(const char *s1);
 //step2
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
 
 #endif
