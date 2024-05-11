@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 23:11:59 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/11 13:37:19 by tkomai           ###   ########.fr       */
+/*   Created: 2024/05/08 10:44:50 by tsukuru           #+#    #+#             */
+/*   Updated: 2024/05/10 19:53:54 by tsukuru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char *ft_strdup(const char *s1)
 {
-    while (*s)
+    char *space = (char *)malloc(ft_strlen(s1) +1);
+    char *temp = space;
+    if (space == NULL)
     {
-        if (*s == (char)c)
-        {
-            return (char *)s;
-        }
-        s++;
+        return NULL;
     }
-
-    if (c == '\0')
+    
+    while (*s1)
     {
-        return (char *)s;
+        *temp++ = *s1++;
     }
-
-    return NULL;
+    *temp = '\0';
+    return space;
 }
-
-// #include <stdio.h>
 
 // int main(void)
 // {
-//     char *s ="I want to make the Youtube video.";
-//     char *f = ft_strchr(s, 't');
-//     printf("%s\n", f);
+//     char *src = "Bonjour le monde.\n";
+//     char *test = ft_strdup(src);
+//     printf("%s", test);
 // }
