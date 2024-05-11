@@ -3,63 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:58:54 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/03 18:27:24 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/03 20:42:12 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t max_len)
 {
-    char *n = NULL;
-    char *h;
-    h = (char *)haystack;
-    size_t i;
-    i = 0;
-    while(needle[i] && len > i)
-    {
-        n[i] = needle[i];
-        i++;
-    }
-    i = 0;
-    while(*h)
-    {
-        if (*h == *n)
-        {
-            char *z;
-            z = h;
-            while (*h == *n)
-            {
+	size_t	needle_len;
+	size_t	i;
+	char	*h;
+	size_t k;
 
-                if (len == i)
-                {
-                    return z;
-                }
-                h++;
-                n++;
-                i++;
-            }
-        }
-        h++;
-    }
-    return NULL;
+	h = (char *)haystack;
+	needle_len = 0;
+	i = 0;
+	while (needle[needle_len])
+	{
+		needle_len++;
+	}
+	if (needle_len == 0)
+	{
+		return (h);
+	}
+	while (h[i] && (i + needle_len) <= max_len)
+	{
+		k = 0;
+		while (k < needle_len && h[i + k] == needle[k])
+		{
+			k++;
+		}
+		if (k == needle_len)
+		{
+			return (&h[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-    char a[] = "Bonjour comment allez-vous?";
-    char b[] = "comment";
-    char *test = ft_strnstr(a, b, sizeof(b));
-    
-    if (test != NULL)
-    {
-        printf("Found %s.\n", test);
-    }else{
-        printf("Not found.");
-    }
-}
+// int main(void)
+// {
+//     char a[] = "Bonkour comment allez-vous?";
+//     char b[] = "comment";
+//     char *test = ft_strnstr(a, b, sizeof(a));
+
+//     if (test != NULL)
+//     {
+//         printf("Found %s.\n", test);
+//     }else{
+//         printf("Not found.\n");
+//     }
+// }
