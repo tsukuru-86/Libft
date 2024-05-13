@@ -6,57 +6,116 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 14:35:55 by tkomai            #+#    #+#             */
-/*   Updated: 2024/05/11 17:31:19 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/05/13 23:30:57 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+int count_box(char const *s, char c)
 {
-	char **result;
-	int array_count;
+	int count;
 	int i;
-	char *test = s;
-
-	array_count = 0;
-	while(s[i])
-	{
-		if (s[i] != c && s[i + 1] == c)
-			array_count++;
-		i++;
-	}
+	
+	count = 0;
 	i = 0;
-	
-	result = (char **)malloc(sizeof(char *) * (array_count + 1))
-	if (!result)
-		return (NULL);
-	
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (s[i] == c && s[i + 1] != c)
+			count++;
+		i++;
+	}
+
+	return count;
+}
+
+char **ft_split(char const *s, char c)
+{
+	int i;
+	int j;
+	int k;
+	int keep;
+	int count_char;
+	char *word;
+
+	char **array = (char **)malloc(sizeof(char *) * (count_box(s ,c) + 1));
+	
+	i = 0;
+	j = 0;
+	count_char = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		keep = i;
+		while (s[i] != c && s[i])
 		{
+			count_char++;
 			i++;
 		}
-		char *array = (char *)malloc(sizeof(char) * (i + 1))
-		if (!array)
-		 return NULL;
-
-		int j = 0;
-		while (j < i)
+		word = (char *)malloc(sizeof(char *) * (count_char + 1));
+		i = keep;
+		k = 0;
+		while (s[i] != c && s[i])
 		{
-			array[j] = s[i]
+			word[k] = s[i];
+			k++;
+			i++;
 		}
+		word[k] = '\0';
+		array[j] = word;
+		j++;
 	}
-	
+	return array;
 }
+
 
 
 int main(void)
 {
-	char *str = "Tokyo:China:USA:Spain:France";
+	int i = 0;
+	char *str = "::Tokyo:China:USA:Spain:France::";
 	char c = ':';
 
-	char *test = ft_split(str, c);
-	printf("%s", test);
+	char **test = ft_split(str, c);
+	while (test[i])
+	{
+		printf("%s\n", test[i]);
+		i++;
+	}
+	
 }
+
+
+// char **ft_split(char const *s, char c)
+// {
+// 	int i;
+// 	int k;
+// 	int j;
+// 	int count;
+
+// 	count = 0;
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		if (s[i] == c && s[i + 1] != c)
+// 			count++;
+// 	}
+	
+// 	char **allocate = (char **)malloc(sizeof(char *) * (count + 1));
+	
+// 	i = 0;
+// 	while (s[i] == c)
+// 		i++;
+
+// 	k = 0;
+// 	j = 0;
+// 	while (s[i + k] != c && s[i + k])
+// 	{
+// 		allocate[j] = &s[i + k];
+		
+// 	}
+// }
+
+
+
