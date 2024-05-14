@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 09:30:08 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/08 10:42:42 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/14 16:13:40 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void *ft_calloc(size_t count, size_t size)
 //     return 0;
 // }
 
-int main(void)
-{
-    char *b = ft_calloc(8, sizeof(char));
-    if (b != NULL) {
-        printf("%s", b);
-        // free(b); // 使用後にメモリを解放
-    }
-    return 0;
-}
+// int main(void)
+// {
+//     char *b = ft_calloc(8, sizeof(char));
+//     if (b != NULL) {
+//         printf("%s", b);
+//         // free(b); // 使用後にメモリを解放
+//     }
+//     return 0;
+// }
