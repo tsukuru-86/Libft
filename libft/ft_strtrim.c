@@ -6,14 +6,12 @@
 /*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:05:19 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/11 11:12:38 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/13 21:37:21 by tsukuru          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 //うまく実行出来ず、、
-
-
 #include "libft.h"
 
 static int is_set(const char c, const char *set)
