@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:52:10 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/01 18:12:28 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/05/28 20:24:11 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -21,15 +21,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*a != *b)
 		{
-			return (1);
+			return (*a - *b);
 		}
 		a++;
 		b++;
 	}
 	return (0);
 }
-
-// #include <stdio.h>
 
 // int main(void)
 // {
@@ -49,6 +47,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 //     {
 //         printf("Same.\n");
 //     }else{
-//         printf("Not same.\n");
+//         printf("Not same. %d\n", test2);
 //     }
 // }

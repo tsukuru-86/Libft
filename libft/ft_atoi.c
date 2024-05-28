@@ -6,11 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:20:16 by tkomai            #+#    #+#             */
-/*   Updated: 2024/05/03 20:21:43 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/05/28 19:45:08 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-// #include <stdio.h>
+// #include "libft.h"
 
 // int main(void)
 // {
@@ -49,5 +49,3 @@ int	ft_atoi(const char *str)
 // 	test = ft_atoi(a);
 // 	printf("c'est le %d\n", test);
 // }
-
-// Je suis tres heureux.
