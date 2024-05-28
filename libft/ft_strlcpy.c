@@ -12,33 +12,32 @@
 
 #include <stddef.h>
 
-size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-    size_t src_len = 0;
-    const char *s = src;
+	size_t		src_len;
+	const char	*s = src;
+	size_t		i;
+	char		*d;
 
-    while (*s != '\0')
-    {
-        s++;
-        src_len++;
-    }
-
-    if (dst == NULL)
-    {
-        return src_len;
-    }
-
-    size_t i = 0;
-    char *d = dst;
-    while (i < dstsize - 1 && *src != '\0')
-    {
-        *dst = *src++;
-        i++;
-    }
-    
-    *d = '\0';
-    
-    return src_len;
+	src_len = 0;
+	while (*s != '\0')
+	{
+		s++;
+		src_len++;
+	}
+	if (dst == NULL)
+	{
+		return (src_len);
+	}
+	i = 0;
+	d = dst;
+	while (i < dstsize - 1 && *src != '\0')
+	{
+		*dst = *src++;
+		i++;
+	}
+	*d = '\0';
+	return (src_len);
 }
 
 // #include <stdio.h>
@@ -65,5 +64,5 @@ size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize
 //     ret = ft_strlcpy(NULL, src, sizeof(dst));
 //     printf("ret: %zu\n", ret);
 
-//     return 0;
+//     return (0);
 // }

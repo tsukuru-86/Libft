@@ -10,35 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	index;
-	char *str;
+	char			*str;
 
 	index = 0;
 	if (!s || !(*f))
 		return (NULL);
-	
 	str = ft_strdup(s);
-	
 	if (!str)
-		return 0;
-	
+		return (0);
 	while (s[index])
 	{
 		str[index] = f(index, str[index]);
 		if (!str[index])
-			return  NULL;
+			return (NULL);
 		index++;
 	}
-
 	str[index] = '\0';
 	return (str);
 }
@@ -47,14 +42,13 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 //     // アルファベットを3文字ずらす
 //     if (ft_isalpha(c)) {
 //         if (islower(c)) {
-//             return ((c - 'a' + 3) % 26) + 'a';
+//             return (((c - 'a' + 3) % 26) + 'a');
 //         } else {
-//             return ((c - 'A' + 3) % 26) + 'A';
+//             return (((c - 'A' + 3) % 26) + 'A');
 //         }
 //     }
-//     return c;
+//     return (c);
 // }
-
 
 // int main(void) {
 //     char *str = "Hello, World!";
@@ -67,5 +61,5 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 //         printf("Memory allocation failed\n");
 //     }
 
-//     return 0;
+//     return (0);
 // }

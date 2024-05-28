@@ -13,24 +13,25 @@
 #include "libft.h"
 #include <ctype.h>
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int index = 0;
+	unsigned int	index;
 
-    if (!s || !f)
-        return;
-
-    while (s[index])
-    {
-        f(index, &s[index]);
-        index++;
-    }
+	index = 0;
+	if (!s || !f)
+		return ;
+	while (s[index])
+	{
+		f(index, &s[index]);
+		index++;
+	}
 }
 
 // // example_function: converts characters at even indices to uppercase
 // void example_function(unsigned int index, char *c)
 // {
-//     if (index % 2 == 0 && islower((unsigned char)*c)) // Check if the character is lowercase
+//     if (index % 2 == 0 && islower((unsigned char)*c))
+	// Check if the character is lowercase
 //         *c = toupper((unsigned char)*c); // Convert to uppercase
 // }
 
@@ -40,5 +41,5 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 //     ft_striteri(str, example_function);
 
 //     printf("%s\n", str);
-//     return 0;
+//     return (0);
 // }

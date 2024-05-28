@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
@@ -31,5 +31,5 @@ void ft_putchar_fd(char c, int fd)
 // int main()
 // {
 //     test_ft_putchar_fd();  // テスト関数を呼び出す
-//     return 0;
+//     return (0);
 // }

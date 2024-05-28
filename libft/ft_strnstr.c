@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 15:58:54 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/03 20:42:12 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/05/28 19:28:25 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t max_len)
 	needle_len = 0;
 	i = 0;
 	while (needle[needle_len])
-	{
 		needle_len++;
-	}
 	if (needle_len == 0)
-	{
 		return (h);
-	}
 	while (h[i] && (i + needle_len) <= max_len)
 	{
 		k = 0;
 		while (k < needle_len && h[i + k] == needle[k])
-		{
 			k++;
-		}
 		if (k == needle_len)
-		{
 			return (&h[i]);
-		}
 		i++;
 	}
 	return (NULL);

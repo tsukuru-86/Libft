@@ -14,25 +14,31 @@
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    char *d = (char *)dst;
-    const char *s = (const char *)src;
-    size_t i = 0;
+	char		*d;
+	const char	*s = (const char *)src;
+	size_t		i;
 
-    if(d < s)
-    {
-        while (i < len){
-            d[i] = s[i];
-            i++;
-        }
-    }else{
-        while (len > 0){
-            len--;
-            d[len] = s[len];
-        }
-    }
-    return dst;
+	d = (char *)dst;
+	i = 0;
+	if (d < s)
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (len > 0)
+		{
+			len--;
+			d[len] = s[len];
+		}
+	}
+	return (dst);
 }
 
 // int main(void)
