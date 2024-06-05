@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	c = (unsigned char)c;
+	while (*s != '\0')
 	{
-		if (*s == (char)c)
+		if ((unsigned char)*s == c)
 		{
 			return ((char *)s);
 		}

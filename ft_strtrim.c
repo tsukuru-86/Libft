@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//うまく実行出来ず、、
 #include "libft.h"
 
 static int	is_set(const char c, const char *set)
@@ -33,11 +32,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	// find the trimming start point
 	start = 0;
 	while (s1[start] && is_set(s1[start], set))
 		start++;
-	// find the trimming end point
 	end = ft_strlen(s1);
 	while (end > start && is_set(s1[end - 1], set))
 		end--;
@@ -49,16 +46,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed_str);
 }
 
-int main(void)
-{
-    char *a = "1234432123東京ララララララ122222321";
-    char *set = "1234";
+// int	main(void)
+// {
+// 	char *a = "1234432123東京ララララララ122222321";
+// 	char *set = "1234";
 
-    char *trim = ft_strtrim(a, set);
-    if (trim == NULL) {
-        printf("Memory allocation failed or other error.\n");
-    } else {
-        printf("Trimmed string: '%s'\n", trim);
-        free(trim);
-    }
-}
+// 	char *trim = ft_strtrim(a, set);
+// 	if (trim == NULL)
+// 	{
+// 		printf("Memory allocation failed or other error.\n");
+// 	}
+// 	else
+// 	{
+// 		printf("Trimmed string: '%s'\n", trim);
+// 		free(trim);
+// 	}
+// }

@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// I couldn't understand by my self.
-
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -30,11 +28,10 @@ void	*ft_calloc(size_t count, size_t size)
 	while (i < count * size)
 	{
 		ptr[i] = 0;
+		i++;
 	}
 	return (memory);
 }
-
-#include <stdio.h>
 
 // int main(void)
 // {

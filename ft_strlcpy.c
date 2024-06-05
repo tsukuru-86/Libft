@@ -12,34 +12,30 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t		src_len;
-	const char	*s = src;
-	size_t		i;
-	
+	size_t	src_len;
+	size_t	i;
+
+	if (!src)
+		return (0);
 	src_len = 0;
-	while (*s != '\0')
-	{
-		s++;
+	while (src[src_len] != '\0')
 		src_len++;
-	}
-	if (dstsize == 0)
-		return (src_len);
-	if (dst == NULL)
+	if (dst == NULL || dstsize == 0)
 		return (src_len);
 	i = 0;
+	if (dstsize > src_len)
+		dstsize = src_len + 1;
 	while (i < dstsize - 1 && *src != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	if (dstsize > 0)
+        dst[i] = '\0';
 	return (src_len);
 }
-
-// #include <stdio.h>
-// #include <string.h>
 
 // int main() {
 //     char dst[20];
@@ -47,20 +43,23 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 //     size_t ret;
 
 //     // 十分な容量がある場合
-//     ret = ft_strlcpy(dst, src, sizeof(dst));
+//     ret = strlcpy(dst, src, sizeof(dst));
 //     printf("dst: %s, ret: %zu\n", dst, ret);
 
-//     // 容量不足の場合
-//     ret = ft_strlcpy(dst, src, 5);
-//     printf("dst: %s, ret: %zu\n", dst, ret);
+//     // // 容量不足の場合
+//     // ret = ft_strlcpy(dst, src, 5);
+//     // printf("dst: %s, ret: %zu\n", dst, ret);
 
-//     // 空文字列の場合
-//     ret = ft_strlcpy(dst, "", sizeof(dst));
-//     printf("dst: %s, ret: %zu\n", dst, ret);
+//     // // 空文字列の場合
+//     // ret = ft_strlcpy(dst, "", sizeof(dst));
+//     // printf("dst: %s, ret: %zu\n", dst, ret);
 
-//     // NULLの場合
-//     ret = ft_strlcpy(NULL, src, sizeof(dst));
-//     printf("ret: %zu\n", ret);
+//     // // NULLの場合
+//     // ret = ft_strlcpy(NULL, src, sizeof(dst));
+//     // printf("ret: %zu\n", ret);
+
+// 	ret = strlcpy(dst, "aasdjj;s;sa", 100);
+// 	printf ("%zu", ret);
 
 //     return (0);
 // }

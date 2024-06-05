@@ -16,9 +16,10 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last = NULL;
 
+	c = (unsigned char)c;
 	while (*s)
 	{
-		if (*s == (char)c)
+		if ((unsigned char)*s == c)
 		{
 			last = s;
 		}
