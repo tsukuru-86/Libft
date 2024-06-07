@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -46,7 +44,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 //     char a[20] = "abcdefg";
 //     char b[20] = {0}; // ヌル文字で初期化
 //     char c[20] = {0}; // ヌル文字で初期化
-//     ft_memmove(b, a, 4);
-//     memmove(c, a, 4);
+//     ft_memmove(b, a, 14);
+//     memmove(c, a, 14);
 //     printf("%s\n%s\n", b, c);
 // }
