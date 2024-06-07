@@ -6,11 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:04:14 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 18:20:36 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/07 17:44:39 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

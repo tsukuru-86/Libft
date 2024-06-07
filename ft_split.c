@@ -5,167 +5,112 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/11 14:35:55 by tkomai            #+#    #+#             */
-/*   Updated: 2024/05/14 16:01:43 by tkomai           ###   ########.fr       */
+/*   Created: 2024/06/07 13:54:12 by tkomai            #+#    #+#             */
+/*   Updated: 2024/06/07 20:51:17 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_box(char const *s, char c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
+int	count_box(const char *s, char c)
 {
 	int	count;
-	int	i;
+	int	in_word;
 
 	count = 0;
-	i = 0;
-	while (s[i])
+	in_word = 0;
+	while (*s)
 	{
-		if ((i == 0 && s[i] != c) || (s[i] == c && s[i + 1] != c && s[i + 1]))
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
 			count++;
-		i++;
+		}
+		else if (*s == c)
+		{
+			in_word = 0;
+		}
+		s++;
 	}
-	return (count + 1);
-}
-
-char	*copytoword(char *word, const char *s, char c, int *i)
-{
-	int	k;
-
-	k = 0;
-	while (s[*i] != c && s[*i])
-	{
-		word[k] = s[*i];
-		k++;
-		(*i)++;
-	}
-	word[k] = '\0';
-	return (word);
+	return (count);
 }
 
 void	free_array(char **array, int size)
 {
-	int	i;
-
-	i = 0;
-	while (i < size)
+	while (size--)
 	{
-		free(array[i]);
-		i++;
+		free(array[size]);
 	}
 	free(array);
 }
 
-int	function(char const *s, char c, char **array, int j, int *i)
+char	*get_next_word(const char **s, char c)
 {
-	int		keep;
-	int		count_char;
-	char	*word;
+	const char	*start;
+	char		*word;
 
-	count_char = 0;
-	while (s[*i] == c && s[*i])
-		(*i)++;
-	keep = *i;
-	while (s[*i] != c && s[*i])
+	while (**s && **s == c)
 	{
-		count_char++;
-		(*i)++;
+		(*s)++;
 	}
-	word = (char *)malloc(sizeof(char) * (count_char + 1));
+	start = *s;
+	while (**s && **s != c)
+	{
+		(*s)++;
+	}
+	if (start == *s)
+		return (NULL);
+	word = (char *)malloc((*s - start + 1) * sizeof(char));
 	if (!word)
-	{
-		free_array(array, j);
-		return (0);
-	}
-	array[j] = copytoword(word, s, c, &keep);
-	return (1);
+		return (NULL);
+	ft_strlcpy(word, start, *s - start + 1);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**result;
 	int		i;
-	int		j;
-	char	**array;
+	char	*word;
 
-	array = (char **)malloc(sizeof(char *) * (count_box(s, c) + 1));
-	if (!array)
+	if (!s)
+		return (NULL);
+	result = (char **)malloc((count_box(s, c) + 1) * sizeof(char *));
+	if (!result)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (!function(s, c, array, j, &i))
-			return (NULL);
-		j++;
+		word = get_next_word(&s, c);
+		if (!word)
+			break ;
+		result[i++] = word;
 	}
-	array[j] = NULL;
-	return (array);
+	result[i] = NULL;
+	if (i == 0 && count_box(s, c) > 0)
+	{
+		free(result);
+		return (NULL);
+	}
+	return (result);
 }
 
-// int	main(void)
-// {
-// 	int		i;
-// 	char	*str;
-// 	char	c;
-// 	char	**test;
+// int main(void) {
+//     char **result;
 
-// 	i = 0;
-// 	str = "::Brazil:China:USA:Spain:France::";
-// 	c = ':';
-// 	test = ft_split(str, c);
-// 	if (test == NULL)
-// 	{
-// 		printf("failed.\n");
-// 	}
-// 	while (test[i])
-// 	{
-// 		printf("%s\n", test[i]);
-// 		free(test[i]);
-// 		i++;
-// 	}
-// 	free(test);
-// }
+//     result = ft_split("daddddddddddaaaaaaasss", 'a');
+//     if (result == NULL) {
+//         printf("No tokens found or memory allocation failed.\n");
+//         return (1); // エラーが発生した場合は非0を返して終了
+//     }
 
-// char **ft_split(char const *s, char c)
-// {
-// 	int i;
-// 	int j;
-// 	int k;
-// 	int keep;
-// 	int count_char;
-// 	char *word;
+//     for (int i = 0; result[i]; i++) {
+//         printf("%s\n", result[i]);
+//         free(result[i]); // 各トークンのメモリを解放します。
+//     }
+//     free(result); // トークン配列自体のメモ
 
-// 	char **array = (char **)malloc(sizeof(char *) * (count_box(s ,c) + 1));
-// 	if (!array)
-// 		return (NULL);
-
-// 	i = 0;
-// 	j = 0;
-// 	while (s[i])
-// 	{
-// 		count_char = 0;
-// 		while (s[i] == c && s[i])
-// 			i++;
-// 		keep = i;
-// 		while (s[i] != c && s[i])
-// 		{
-// 			count_char++;
-// 			i++;
-// 		}
-// 		word = (char *)malloc(sizeof(char) * (count_char + 1));
-// 		if (!word)
-// 			return (NULL);
-// 		k = 0;
-// 		while (s[i] != c && s[i])
-// 		{
-// 			word[k] = s[i];
-// 			k++;
-// 			i++;
-// 		}
-// 		word[k] = '\0';
-// 		array[j] = copytoword(word, s, c, keep);
-// 		j++;
-// 	}
-// 	array[j] = NULL;
-// 	return (array);
+//     return (0);
 // }

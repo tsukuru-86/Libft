@@ -6,11 +6,13 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 09:32:48 by tkomai            #+#    #+#             */
-/*   Updated: 2024/05/14 11:37:13 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/07 17:46:07 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strdup(const char *s1);
 
 int	get_num_len(int n)
 {
@@ -30,25 +32,22 @@ int	get_num_len(int n)
 char	*duplicate(char *str, int len, int n)
 {
 	unsigned int	num;
+	int				is_negative;
 
-	str[len] = '\0';
-	if (n < 0)
-	{
-		str[0] = '-';
-		num = -n;
-	}
+	is_negative = n < 0;
+	if (is_negative)
+		num = (unsigned int)(-(n + 1)) + 1;
 	else
-	{
 		num = n;
-	}
+	str[len] = '\0';
 	while (len > 0)
 	{
 		len--;
-		if (str[len] == '-')
-			break ;
-		str[len] = num % 10 + '0';
+		str[len] = (num % 10) + '0';
 		num /= 10;
 	}
+	if (is_negative)
+		str[0] = '-';
 	return (str);
 }
 
@@ -57,6 +56,8 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*str;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	len = get_num_len(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)

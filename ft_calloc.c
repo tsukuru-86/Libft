@@ -23,7 +23,7 @@ void	*ft_calloc(size_t count, size_t size)
 	{
 		return (NULL);
 	}
-	ptr = memory;
+	ptr = (char *)memory;
 	i = 0;
 	while (i < count * size)
 	{
@@ -32,6 +32,18 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return (memory);
 }
+
+// void	*ft_calloc(size_t count, size_t size)
+// {
+// 	size_t	tot_size;
+// 	void	*dst;
+
+// 	tot_size = size * count;
+// 	if (!(dst = malloc(tot_size)))
+// 		return (0);
+// 	ft_memset(dst, 0, tot_size);
+// 	return (dst);
+// }
 
 // int main(void)
 // {
