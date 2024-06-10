@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsukuru <tsukuru@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:48:51 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/10 19:42:58 by tsukuru          ###   ########.fr       */
+/*   Updated: 2024/06/10 19:45:47 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last = NULL;
+	const char	*last;
 
+	last = NULL;
 	c = (unsigned char)c;
 	while (*s)
 	{

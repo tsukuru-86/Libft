@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:20:16 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/07 18:47:43 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:44:19 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	overflow(const char *s, long result, int sign)
 				- '0') > LONG_MAX % 10))
 	{
 		if (sign == 1)
-			return (INT_MAX);
+			return ((int)LONG_MAX);
 		else
-			return (INT_MIN);
+			return ((int)LONG_MIN);
 	}
 	return (0);
 }
 
 int	ft_atoi(const char *str)
 {
-	long		result;
-	int			sign;
-	int			overflow_result;
+	long	result;
+	int		sign;
+	int		overflow_result;
 
 	result = 0;
 	sign = 1;
@@ -95,8 +95,10 @@ int	ft_atoi(const char *str)
 // int	main(void)
 // {
 // 	int test;
-// 	char *a = "      86444444444444444444";
+// 	char *a = "      922337203685477580";
 
 // 	test = ft_atoi(a);
+
 // 	printf("c'est le %d\n", test);
+// 	printf("%d\n", atoi("922337203685477580"));
 // }

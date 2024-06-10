@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:54:12 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/07 20:51:17 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/10 20:45:08 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,17 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		word = get_next_word(&s, c);
-		if (!word)
+		if (word)
+			result[i++] = word;
+		else if (*s == '\0')
 			break ;
-		result[i++] = word;
+		else
+		{
+			free_array(result, i);
+			return (NULL);
+		}
 	}
 	result[i] = NULL;
-	if (i == 0 && count_box(s, c) > 0)
-	{
-		free(result);
-		return (NULL);
-	}
 	return (result);
 }
 
@@ -113,4 +114,39 @@ char	**ft_split(char const *s, char c)
 //     free(result); // トークン配列自体のメモ
 
 //     return (0);
+// }
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**result;
+// 	int		i;
+// 	char	*word;
+
+// 	if (!s)
+// 		return (NULL);
+// 	result = (char **)malloc((count_box(s, c) + 1) * sizeof(char *));
+// 	if (!result)
+// 		return (NULL);
+// 	i = 0;
+// 	while (*s)
+// 	{
+// 		word = get_next_word(&s, c);
+// 		if (word)
+// 			result[i++] = word;
+// 		else if (*s == '\0')
+// 			break ;
+// 		else
+// 		{
+// 			free_array(result, i);
+// 			return (NULL);
+// 		}
+// 	}
+// 	result[i] = NULL;
+// ↓この部分があるバージョン
+// 	if (i == 0 && count_box(s, c) > 0)
+// 	{
+// 		free(result);
+// 		return (NULL);
+// 	}
+// 	return (result);
 // }

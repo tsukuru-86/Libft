@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 13:41:18 by tkomai            #+#    #+#             */
-/*   Updated: 2024/05/14 17:05:05 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/10 20:05:40 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	index = 0;
-	if (!s || !(*f))
+	if (!s || !(f))
 		return (NULL);
-	str = ft_strdup(s);
+	str = (char *)malloc(ft_strlen(s) + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (s[index])
 	{
-		str[index] = f(index, str[index]);
-		if (!str[index])
-			return (NULL);
+		str[index] = f(index, s[index]);
 		index++;
 	}
 	str[index] = '\0';

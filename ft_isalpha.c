@@ -6,18 +6,23 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:23:34 by tkomai            #+#    #+#             */
-/*   Updated: 2024/04/18 15:10:20 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:19:17 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+
+// int	ft_isalpha(int c)
+// {
+// 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+// 	{
+// 		return (1);
+// 	}
+// 	return (0);
+// }
 
 // #include <stdio.h>
 
