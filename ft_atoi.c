@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:20:16 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/10 19:44:19 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/12 19:57:57 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	overflow(const char *s, long result, int sign)
 		else
 			return ((int)LONG_MIN);
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_atoi(const char *str)
