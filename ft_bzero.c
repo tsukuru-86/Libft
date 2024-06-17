@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:33:57 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/04/23 19:47:18 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/17 19:25:04 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, '\0', n);
+	ft_memset(s, 0, n);
 }
 
 // #include <stdio.h>

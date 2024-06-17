@@ -6,13 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 10:44:50 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/06/07 17:44:03 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/13 16:06:52 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1)
 {

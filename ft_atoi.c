@@ -6,7 +6,7 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 19:20:16 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/12 19:57:57 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/13 15:57:27 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		overflow_result = overflow(str, result, sign);
-		if (overflow_result != 0)
+		if (overflow_result != 1)
 			return (overflow_result);
 		result = result * 10 + (*str - '0');
 		str++;

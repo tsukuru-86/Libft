@@ -6,15 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 09:23:14 by tsukuru           #+#    #+#             */
-/*   Updated: 2024/05/28 19:34:15 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/13 16:07:27 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

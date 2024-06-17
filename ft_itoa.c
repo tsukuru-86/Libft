@@ -6,13 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 09:32:48 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/07 17:46:07 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/13 15:59:21 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strdup(const char *s1);
 
 int	get_num_len(int n)
 {

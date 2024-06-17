@@ -6,13 +6,11 @@
 /*   By: tkomai <tkomai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:54:12 by tkomai            #+#    #+#             */
-/*   Updated: 2024/06/10 20:45:08 by tkomai           ###   ########.fr       */
+/*   Updated: 2024/06/13 16:06:59 by tkomai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 int	count_box(const char *s, char c)
 {
